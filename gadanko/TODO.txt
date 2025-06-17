@@ -1,0 +1,2 @@
+- navigating between endpoints
+- serving static example pages on it's designated endpoint
