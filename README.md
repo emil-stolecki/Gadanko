@@ -15,7 +15,7 @@
 - video calls
 
 
-##technologies
+## Technologies
 - Java Spring
 - Websocket
 - Kafka
