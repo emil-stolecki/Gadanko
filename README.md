@@ -13,3 +13,9 @@
 - let users label groups (favourite, work, local) for easier access
 - admin tools for managing groups, remove users/messages
 - video calls
+
+
+##technologies
+- Java Spring
+- Websocket
+- Kafka
