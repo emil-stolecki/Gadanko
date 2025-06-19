@@ -1,2 +1,11 @@
 - navigating between endpoints
 - serving static example pages on it's designated endpoint
+    - home page
+    - home page (after logged in)
+    - chat group
+
+- account creation
+- log into account
+- websocket
+- kafka
+- add multiple groups
