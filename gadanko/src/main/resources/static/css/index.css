@@ -1,0 +1,82 @@
+:root{
+ --main-color: #8aa3e9;
+ --main-light-color: #969cf5;
+ --sec-color: #1d1d38;
+ --light-color: azure;
+}
+
+.container{
+    
+    display: grid;
+    grid-template-rows:  200px 2fr 1fr 1fr 25px;
+    grid-template-columns:  1fr 3fr 1fr 1fr 3fr 1fr;
+    row-gap: 25px;
+    height: 100vh;
+    
+}
+.div-header{
+    color: #1d1d38;
+    grid-row:1;
+    grid-column: 2/6;
+}
+.div-header h1{
+   font-size: 80px;
+   font-family: "Sofadi One";
+}
+.div-register-border-1{
+    grid-row: 2/4 ;
+    grid-column: 2 ;
+    border: 2px solid var(--sec-color);
+    border-radius: 5px 10px 5px 5px;
+    background-color: var(--sec-color);
+}
+.div-login-border-1{
+    grid-row: 2 ;
+    grid-column: 5 ;
+    border: 2px solid var(--sec-color);
+    border-radius: 5px 10px 5px 5px;
+    background-color: var(--sec-color);
+}
+.div-footer{
+    grid-row: 5 ;
+    grid-column: 1/7 ;
+    background-color: var(--sec-color);
+    color:var(--light-color);
+    text-align: center;
+    font-size: 12px;
+}
+.div-register-border-2{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: 2px solid var(--light-color);
+    border-radius: 0px 10px 0px 0px;
+    grid-row: 2/4 ;
+    grid-column: 2 ;
+    background-color: var(--main-light-color);
+}
+.div-login-border-2{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: 2px solid var(--light-color);
+    border-radius: 0px 10px 0px 0px;
+    grid-row: 2 ;
+    grid-column: 5 ;
+    background-color: var(--main-light-color);
+}
+
+.div-register-content{
+    grid-row: 2 ;
+    grid-column: 2 ; 
+    text-align: center;
+    font-size: 32px;
+    
+
+}
+.div-login-content{
+    grid-row: 2 ;
+    grid-column: 5 ;   
+    text-align: center; 
+    font-size: 32px;
+    
+}
+

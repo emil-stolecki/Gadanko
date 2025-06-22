@@ -1,12 +1,57 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="Utf-8">
-    <title>Title</title>
-
+    <meta charset="UTF-8">
+    <title>Gadanko</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/master.css">
+    <link rel="stylesheet" href="../static/css/forms.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&family=Sofadi+One&display=swap" rel="stylesheet">
 </head>
 <body>
-Home page
+    <div class="container">
+        <div class="div-header">
+            <h1>Gadanko</h1>
+        </div>
+        <div class="div-register-border-1"> </div>
+        <div class="div-register-border-2"></div>
+        <div class="div-register-content">
+            <p>Register</p>
+            <form action="/register" method="post">
+                <label for="username">username</label>
+                <input type="text" id="username">
+                </br>
+                <label for="email">e-mail</label>
+                <input type="text" id="email">
+                </br>
+                <label for="password">password</label>
+                <input type="password" id="password">
+                </br>
+                <label for="repeat">repeat password</label>
+                <input type="password" id="repeat">
+                </br>
+                <input type="submit" value="Register">
+
+            </form>
+        </div>
+        <div class="div-login-border-1"></div>
+        <div class="div-login-border-2"></div>
+        <div class="div-login-content">
+            <p>Login</p>
+            <form action="/login" method="post">
+                <label for="username">username</label>
+                <input type="text" id="username">
+            </br>
+                <label for="password">password</label>
+                <input type="password" id="password">
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="div-footer">Copyright© 2025</div>
+
+
+    </div>
 </body>
 </html>
