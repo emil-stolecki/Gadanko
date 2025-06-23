@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Gadanko</title>
+
+    <link th:href="@{/css/master.css}" rel="stylesheet" />
+    <link th:href="@{/css/index.css}" rel="stylesheet" />
+    <link th:href="@{/css/forms.css}" rel="stylesheet" />
+
     <link rel="stylesheet" href="../static/css/index.css">
     <link rel="stylesheet" href="../static/css/master.css">
     <link rel="stylesheet" href="../static/css/forms.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dangrek&family=Sofadi+One&display=swap" rel="stylesheet">
@@ -19,19 +25,19 @@
         <div class="div-register-border-2"></div>
         <div class="div-register-content">
             <p>Register</p>
-            <form action="/register" method="post">
+            <form method="post" th:action="@{/register}" th:object="${registerData}">
                 <label for="username">username</label>
-                <input type="text" id="username">
-                </br>
+                <input type="text" id="username" th:field = "*{username}">
+                <br/>
                 <label for="email">e-mail</label>
-                <input type="text" id="email">
-                </br>
+                <input type="text" id="email" th:field = "*{email}">
+                <br/>
                 <label for="password">password</label>
-                <input type="password" id="password">
-                </br>
+                <input type="password" id="password" th:field = "*{password}">
+                <br/>
                 <label for="repeat">repeat password</label>
-                <input type="password" id="repeat">
-                </br>
+                <input type="password" id="repeat" th:field = "*{repeat}">
+                <br/>
                 <input type="submit" value="Register">
 
             </form>
@@ -40,12 +46,12 @@
         <div class="div-login-border-2"></div>
         <div class="div-login-content">
             <p>Login</p>
-            <form action="/login" method="post">
-                <label for="username">username</label>
-                <input type="text" id="username">
-            </br>
-                <label for="password">password</label>
-                <input type="password" id="password">
+            <form th:action="@{/login}" th:object="${loginData}" method="post">
+                <label for="username-login">username</label>
+                <input type="text" id="username-login" th:field="*{username}">
+            <br>
+                <label for="password-login">password</label>
+                <input type="password" id="password-login" th:field="*{password}">
                 <input type="submit" value="Login">
             </form>
         </div>

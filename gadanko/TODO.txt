@@ -5,6 +5,7 @@
     - chat group
 
 - account creation
+- connect db
 - log into account
 - websocket
 - kafka
