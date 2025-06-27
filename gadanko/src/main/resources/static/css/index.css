@@ -80,3 +80,13 @@
     
 }
 
+.info{
+    grid-row: 2;
+    grid-column: 3/5;
+    background: var(--light-color);
+    margin: auto;
+    margin-top: 100px;
+    width: 80%;
+    min-height:50px;
+    text-align:center;
+}

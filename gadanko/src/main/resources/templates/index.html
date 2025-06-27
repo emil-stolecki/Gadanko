@@ -25,7 +25,7 @@
         <div class="div-register-border-2"></div>
         <div class="div-register-content">
             <p>Register</p>
-            <form method="post" th:action="@{/register}" th:object="${registerData}">
+            <form method="post" th:action="@{/register}" th:object="${registerData}" >
                 <label for="username">username</label>
                 <input type="text" id="username" th:field = "*{username}">
                 <br/>
@@ -46,7 +46,7 @@
         <div class="div-login-border-2"></div>
         <div class="div-login-content">
             <p>Login</p>
-            <form th:action="@{/login}" th:object="${loginData}" method="post">
+            <form th:action="@{/login}" th:object="${loginData}"  method="post">
                 <label for="username-login">username</label>
                 <input type="text" id="username-login" th:field="*{username}">
             <br>
@@ -54,6 +54,11 @@
                 <input type="password" id="password-login" th:field="*{password}">
                 <input type="submit" value="Login">
             </form>
+        </div>
+        <div class="info" th:if="${info==true}">
+            <p>INFO</p>
+            <p th:text="*{message}" />
+
         </div>
         <div class="div-footer">Copyright© 2025</div>
 
