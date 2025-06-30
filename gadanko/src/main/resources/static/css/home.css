@@ -5,7 +5,7 @@
  --light-color: azure;
 }
 .container{
-    
+
     display: grid;
     grid-template-rows:  100px 1fr  25px;
     grid-template-columns:  100px 1fr 4fr 1fr 100px;

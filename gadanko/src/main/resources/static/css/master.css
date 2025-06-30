@@ -13,10 +13,11 @@ body{
 .menu{
     background-color: var(--sec-color);
     grid-column: 5;
+    grid-row: 1;
     border-radius: 0px 0px 0px 100%; 
     border-bottom: 6px double var(--light-color);
     border-left: 6px double var(--light-color);
-    
+
 }
 .menu:hover{
     border-radius: 0px 0px 0px 50%; 
@@ -29,6 +30,7 @@ body{
 .logout-button{
     background-color: var(--sec-color);
     grid-column: 1;
+    grid-row: 1;
     border-radius: 0px 0px 100% 0px; 
     border-bottom: 6px double var(--light-color);
     border-right: 6px double var(--light-color);
@@ -40,4 +42,13 @@ body{
 .logout-button svg{
     margin-left: 5px;
     margin-top: 10px;
+}
+
+ul{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+    color: inherit;
+
 }

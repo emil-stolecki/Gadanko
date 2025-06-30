@@ -1,12 +1,14 @@
 - navigating between endpoints +
-- serving static example pages on it's designated endpoint +
-    - home page
-    - home page (after logged in)
-    - chat group
+- serving static example pages on it's designated endpoint
+    - home page +
+    - home page (after logged in) +
+    - chat group +
+    - profile page
 
 - account creation
 - connect db
 - log into account
+- send message
 - websocket
 - kafka
 - add multiple groups

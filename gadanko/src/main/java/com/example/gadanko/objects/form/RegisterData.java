@@ -1,4 +1,4 @@
-package com.example.gadanko.objects;
+package com.example.gadanko.objects.form;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;

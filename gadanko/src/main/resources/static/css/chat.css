@@ -25,6 +25,8 @@
     margin-top: 50px;
     overflow: scroll;
 }
+
+
 .chat-border{
     grid-column: 3;
     grid-row: 1/3;
