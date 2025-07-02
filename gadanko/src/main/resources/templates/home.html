@@ -30,7 +30,7 @@
         <div class="group-list" >
             <ul th:if="${not#lists.isEmpty(groups)}">
                 <li th:each="group : ${groups}">
-                    <a th:href="@{'/chat/'+${group.id}}">
+                    <a th:href="@{'/chat/'+${group.id}}+'?group='+${group.name}">
                         <div class="group-elem">
                         <p th:text="${group.name}"></p>
                         </div>

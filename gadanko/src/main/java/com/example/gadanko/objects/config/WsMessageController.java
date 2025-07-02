@@ -12,7 +12,6 @@ public class WsMessageController {
     @MessageMapping("/sent")
     @SendTo("/chat/messages")
     public Message sendMessage(Message message) throws Exception{
-        System.out.println("aaa");
         return message;
     }
 }
