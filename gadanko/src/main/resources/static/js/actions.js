@@ -2,7 +2,7 @@ var stompClient = null;
 var chatbox = null;
 var user_name = null;
 var group_name = null;
-
+var chatId = window.location.pathname.split("/")[2]
 function logout(){
     //terminate session
     location.href="/";
@@ -11,13 +11,13 @@ function return_page(page){
     location.href="/"+page
 }
 function connect(){
-    var socket = new SockJS("/sent");
+    var socket = new SockJS("/sent/"+chatId);
     stompClient = Stomp.over(socket);
     stompClient.connect({}, onConnected, onError);
 
 }
 function onConnected() {
-  stompClient.subscribe("/chat/messages", receive_message);
+  stompClient.subscribe("/chat/"+chatId, receive_message);
     chatbox = document.getElementById("chat-box");
     user_name = document.getElementById("user").textContent;
     group_name = document.getElementById("group-name").textContent;
@@ -37,7 +37,7 @@ function send_message(){
             text: text.value,
             date: new Date()
         }
-        stompClient.send("/app/sent", {}, JSON.stringify(message));
+        stompClient.send("/app/sent/"+chatId, {}, JSON.stringify(message));
         text.value = ""
         event.preventDefault()
     }

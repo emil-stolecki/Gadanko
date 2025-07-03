@@ -59,12 +59,12 @@ public class WebController {
         //check if logged in
         //get group list from db
         Group[] group_list = new Group[6];
-        group_list[0]= new Group(0L,"General");
-        group_list[1]= new Group(1L,"Art");
-        group_list[2]= new Group(2L,"Politics");
-        group_list[3]= new Group(5L,"Tech");
-        group_list[4]= new Group(7L,"Fashion");
-        group_list[5]= new Group(9L,"Travel");
+        group_list[0]= new Group(1L,"General");
+        group_list[1]= new Group(2L,"Art");
+        group_list[2]= new Group(3L,"Politics");
+        group_list[3]= new Group(4L,"Tech");
+        group_list[4]= new Group(5L,"Fashion");
+        group_list[5]= new Group(6L,"Travel");
 
         model.addAttribute("groups",group_list);
 
