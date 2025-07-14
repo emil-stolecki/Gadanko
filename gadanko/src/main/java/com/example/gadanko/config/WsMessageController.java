@@ -1,4 +1,4 @@
-package com.example.gadanko.objects.config;
+package com.example.gadanko.config;
 
 import com.example.gadanko.objects.Message;
 import org.springframework.messaging.handler.annotation.MessageMapping;

@@ -1,4 +1,4 @@
-package com.example.gadanko.objects.config;
+package com.example.gadanko.config;
 
 
 import org.springframework.context.annotation.Configuration;

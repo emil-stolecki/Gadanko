@@ -5,7 +5,9 @@ import com.example.gadanko.objects.Message;
 import com.example.gadanko.objects.form.LoginData;
 import com.example.gadanko.objects.form.RegisterData;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,6 +19,8 @@ import java.util.random.RandomGenerator;
 @Controller
 public class WebController {
 
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
 
     @GetMapping("/")
     public String start(Model model) {
@@ -91,6 +95,14 @@ public class WebController {
         model.addAttribute("newMessage","");
 
         return "chat";
+    }
+
+    @GetMapping("/test")
+    public String  testKafka(){
+        System.out.println("sent");
+        kafkaTemplate.send("java-test", "GGGGGG");
+
+        return "home";
     }
 
 
