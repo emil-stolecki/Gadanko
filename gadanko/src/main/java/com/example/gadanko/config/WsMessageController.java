@@ -1,23 +1,32 @@
 package com.example.gadanko.config;
 
 import com.example.gadanko.objects.Message;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.kafka.core.KafkaTemplate;
 @Controller
 public class WsMessageController {
+
+
+    //make cyston serializer for message
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
 
     @MessageMapping("/sent/1")
     @SendTo("/chat/1")
     public Message sendMessage1(Message message) throws Exception{
+        kafkaTemplate.send("general", message.getText());
         return message;
     }
 
     @MessageMapping("/sent/2")
     @SendTo("/chat/2")
     public Message sendMessage2(Message message) throws Exception{
+        System.out.println("here");
+        kafkaTemplate.send("art", message.getText());
         return message;
     }
 

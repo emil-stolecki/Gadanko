@@ -7,6 +7,7 @@ import com.example.gadanko.objects.form.RegisterData;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -97,14 +98,14 @@ public class WebController {
         return "chat";
     }
 
-    @GetMapping("/test")
-    public String  testKafka(){
-        System.out.println("sent");
-        kafkaTemplate.send("java-test", "GGGGGG");
 
-        return "home";
+    @KafkaListener(topics = "general", groupId = "1")
+    public void listenGroupFoo(String message) {
+        System.out.println("Received Message in general: " + message);
     }
-
-
+    @KafkaListener(topics = "art", groupId = "1")
+    public void listenGroupFoo1(String message) {
+        System.out.println("Received Message in art: " + message);
+    }
 
 }
