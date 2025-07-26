@@ -13,20 +13,19 @@ public class WsMessageController {
 
     //make cyston serializer for message
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String, Message> kafkaTemplate;
 
     @MessageMapping("/sent/1")
     @SendTo("/chat/1")
     public Message sendMessage1(Message message) throws Exception{
-        kafkaTemplate.send("general", message.getText());
+        kafkaTemplate.send("general", message);
         return message;
     }
 
     @MessageMapping("/sent/2")
     @SendTo("/chat/2")
     public Message sendMessage2(Message message) throws Exception{
-        System.out.println("here");
-        kafkaTemplate.send("art", message.getText());
+        kafkaTemplate.send("art", message);
         return message;
     }
 

@@ -37,4 +37,11 @@ public class KafkaTopicConfig {
                 .replicas(1)
                 .build();
     }
+    @Bean
+    public NewTopic grouptopicTech() {
+        return TopicBuilder.name("tech")
+                .partitions(1)
+                .replicas(1)
+                .build();
+    }
 }

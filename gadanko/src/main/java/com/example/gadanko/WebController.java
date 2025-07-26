@@ -21,7 +21,7 @@ import java.util.random.RandomGenerator;
 public class WebController {
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String, Message> kafkaTemplate;
 
     @GetMapping("/")
     public String start(Model model) {
@@ -100,11 +100,15 @@ public class WebController {
 
 
     @KafkaListener(topics = "general", groupId = "1")
-    public void listenGroupFoo(String message) {
+    public void listenGroup1(Message message) {
         System.out.println("Received Message in general: " + message);
     }
     @KafkaListener(topics = "art", groupId = "1")
-    public void listenGroupFoo1(String message) {
+    public void listenGroup2(Message message) {
+        System.out.println("Received Message in art: " + message);
+    }
+    @KafkaListener(topics = "tech", groupId = "1")
+    public void listenGroup3(Message message) {
         System.out.println("Received Message in art: " + message);
     }
 
