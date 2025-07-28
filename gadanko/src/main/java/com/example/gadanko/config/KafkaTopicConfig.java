@@ -14,13 +14,6 @@ import java.util.Map;
 @Configuration
 public class KafkaTopicConfig {
 
-    @Bean
-    public NewTopic userActivityTopic() {
-        return TopicBuilder.name("java-test")
-                .partitions(1)
-                .replicas(1)
-                .build();
-    }
 
     @Bean
     public NewTopic grouptopicGeneral() {
@@ -38,10 +31,32 @@ public class KafkaTopicConfig {
                 .build();
     }
     @Bean
+    public NewTopic grouptopicPolitics() {
+        return TopicBuilder.name("politics")
+                .partitions(1)
+                .replicas(1)
+                .build();
+    }
+    @Bean
     public NewTopic grouptopicTech() {
         return TopicBuilder.name("tech")
                 .partitions(1)
                 .replicas(1)
                 .build();
     }
+    @Bean
+    public NewTopic grouptopicFashion() {
+        return TopicBuilder.name("fashion")
+                .partitions(1)
+                .replicas(1)
+                .build();
+    }
+    @Bean
+    public NewTopic grouptopicTravel() {
+        return TopicBuilder.name("travel")
+                .partitions(1)
+                .replicas(1)
+                .build();
+    }
+
 }
